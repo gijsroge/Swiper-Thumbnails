@@ -4,7 +4,6 @@ Small Swiper plugin that enables pre-rendered thumbnail support.
 ## Usage:
 ```javascript
 $(document).ready(function(){
-
     var cases = new Swiper ('.js-cases-slider', {
       direction: 'horizontal',
     })
