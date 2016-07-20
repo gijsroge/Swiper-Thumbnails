@@ -16,7 +16,7 @@ $(document).ready(function(){
 });
 ```
 
-*Add anywhere to your html*
+*Add anywhere to your html:*
 ```html
 <div class="swiper-thumbnails">
     <button type="button">any html content</button>
