@@ -25,5 +25,7 @@ $(document).ready(function(){
 </div>
 ```
 
+If you want sliding thumbnails (useful if you have lots of thumbnails) I suggest using the official sliding thumbnails which can be found [here](http://idangero.us/swiper/demos/23-thumbs-gallery.html).
+
 *Currently only supported for the jQuery version of Swiper*
 *Only tested with horizontal sliders*
