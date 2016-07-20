@@ -10,7 +10,7 @@ $(document).ready(function(){
         loop: true,
     })
   
-    swiperThumbs(cases, {
+    swiperThumbs(mySwiper, {
         // Our default options
         element: 'swiper-thumbnails',
         activeClass: 'is-active'
