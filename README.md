@@ -1,5 +1,5 @@
 # Swiper-Thumbnails
-Small Swiper plugin that enables pre-rendered thumbnail support.
+Small [Swiper](http://idangero.us/swiper/#.V49zbZOrhBc) plugin that enables pre-rendered thumbnail support.
 
 ## Usage:
 ```javascript
