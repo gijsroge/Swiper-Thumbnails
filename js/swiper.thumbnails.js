@@ -28,8 +28,9 @@ var swiperThumbs = function (swiper, settings) {
    * Get real activeIndex
    * @returns {*}
    */
-  var realIndex = function () {
-    return swiper.slides.eq(swiper.activeIndex).attr('data-swiper-slide-index');
+  var realIndex = function (index) {
+    if (index === undefined) index = swiper.activeIndex;
+    return parseInt(swiper.slides.eq(index).attr('data-swiper-slide-index'));
   }
 
   var app = {
@@ -44,8 +45,17 @@ var swiperThumbs = function (swiper, settings) {
        */
       element.children().each(function () {
         $(this).on('click', function () {
-          var index = $(this).index();
-          app.moveToSlide(index);
+
+          // Get clicked index
+          var index = parseInt($(this).index());
+
+          // Get difference between item clicked and current real active index.
+          var difference = (index - realIndex());
+
+          // Move to slide that makes sense for the user by 
+          // checking what the current active slide is and adding the difference
+          // this makes sure the swiper moves to a natural direction the user expects.
+          app.moveToSlide(swiper.activeIndex + difference);
         })
       })
 
@@ -54,11 +64,12 @@ var swiperThumbs = function (swiper, settings) {
        */
       swiper.on('slideChangeStart', function (swiper) {
         app.updateActiveClasses(realIndex())
+        console.log('activeIndex: '+swiper.activeIndex);
       });
     },
 
     moveToSlide: function (index) {
-      swiper.slideTo(startIndex + index);
+      swiper.slideTo(index);
     },
 
     updateActiveClasses: function (index) {
