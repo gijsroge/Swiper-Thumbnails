@@ -4,11 +4,14 @@ Small [Swiper](http://idangero.us/swiper/#.V49zbZOrhBc) plugin that enables pre-
 ## Usage:
 ```javascript
 $(document).ready(function(){
-    var cases = new Swiper ('.js-cases-slider', {
-      direction: 'horizontal',
+    var mySwiper = new Swiper ('.swiper-container', {
+        // Example options
+        direction: 'vertical',
+        loop: true,
     })
   
     swiperThumbs(cases, {
+        // Our default options
         element: 'swiper-thumbnails',
         activeClass: 'is-active'
     });
