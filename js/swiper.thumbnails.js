@@ -22,7 +22,6 @@ var swiperThumbs = function (swiper, settings) {
    * Helper vars
    */
   var element = $('.' + options.element);
-  var startIndex = swiper.activeIndex;
 
   /**
    * Get real activeIndex
