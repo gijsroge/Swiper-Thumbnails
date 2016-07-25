@@ -36,6 +36,7 @@ var swiperThumbs = function (swiper, settings) {
 
     init: function () {
       app.bindUIevents();
+      app.updateActiveClasses(realIndex(swiper.activeIndex));
     },
 
     bindUIevents: function () {
