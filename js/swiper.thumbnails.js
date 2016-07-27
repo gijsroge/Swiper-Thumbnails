@@ -6,77 +6,86 @@
 var swiperThumbs = function (swiper, settings) {
 
   /**
-   * Default settings
+   * Loop over swiper instances
    */
-  var options = {
-    element: 'swiper-thumbnails',
-    activeClass: 'is-active'
-  }
+  $(swiper).each(function () {
 
-  /**
-   * Merge user settings and default settings
-   */
-  $.extend(options, settings);
+    var _this = this;
 
-  /**
-   * Helper vars
-   */
-  var element = $('.' + options.element);
-
-  /**
-   * Get real activeIndex
-   * @returns {*}
-   */
-  var realIndex = function (index) {
-    if (index === undefined) index = swiper.activeIndex;
-    return parseInt(swiper.slides.eq(index).attr('data-swiper-slide-index'));
-  }
-
-  var app = {
-
-    init: function () {
-      app.bindUIevents();
-      app.updateActiveClasses(realIndex(swiper.activeIndex));
-    },
-
-    bindUIevents: function () {
-      /**
-       * Bind click events to thumbs
-       */
-      element.children().each(function () {
-        $(this).on('click', function () {
-
-          // Get clicked index
-          var index = parseInt($(this).index());
-
-          // Get difference between item clicked and current real active index.
-          var difference = (index - realIndex());
-
-          // Move to slide that makes sense for the user by
-          // checking what the current active slide is and adding the difference
-          // this makes sure the swiper moves to a natural direction the user expects.
-          app.moveToSlide(swiper.activeIndex + difference);
-        })
-      })
-
-      /**
-       * Update thumbs on slideChange
-       */
-      swiper.on('slideChangeStart', function (swiper) {
-        app.updateActiveClasses(realIndex())
-      });
-    },
-
-    moveToSlide: function (index) {
-      swiper.slideTo(index);
-    },
-
-    updateActiveClasses: function (index) {
-      element.children().removeClass(options.activeClass);
-      element.children().eq(index).addClass(options.activeClass);
+    /**
+     * Default settings
+     */
+    var options = {
+      element: 'swiper-thumbnails',
+      activeClass: 'is-active'
     }
-  }
 
-  app.init();
+    /**
+     * Merge user settings and default settings
+     */
+    $.extend(options, settings);
+
+    /**
+     * Helper vars
+     */
+    var element = $('.' + options.element);
+
+    /**
+     * Get real activeIndex
+     * @returns {*}
+     */
+    var realIndex = function (index) {
+      if (index === undefined) index = _this.activeIndex;
+      return parseInt(_this.slides.eq(index).attr('data-swiper-slide-index'));
+    }
+
+    var app = {
+
+      init: function () {
+        app.bindUIevents();
+        app.updateActiveClasses(realIndex(_this.activeIndex));
+      },
+
+      bindUIevents: function () {
+        /**
+         * Bind click events to thumbs
+         */
+        element.children().each(function () {
+          $(this).on('click', function () {
+
+            // Get clicked index
+            var index = parseInt($(this).index());
+
+            // Get difference between item clicked and current real active index.
+            var difference = (index - realIndex());
+
+            // Move to slide that makes sense for the user by
+            // checking what the current active slide is and adding the difference
+            // this makes sure the swiper moves to a natural direction the user expects.
+            app.moveToSlide(_this.activeIndex + difference);
+          })
+        })
+
+        /**
+         * Update thumbs on slideChange
+         */
+        _this.on('slideChangeStart', function (swiper) {
+          app.updateActiveClasses(realIndex())
+        });
+      },
+
+      moveToSlide: function (index) {
+        _this.slideTo(index);
+      },
+
+      updateActiveClasses: function (index) {
+        element.children().removeClass(options.activeClass);
+        element.children().eq(index).addClass(options.activeClass);
+      }
+    }
+
+    app.init();
+
+  });
 
 };
