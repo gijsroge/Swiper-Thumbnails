@@ -35,8 +35,15 @@ var swiperThumbs = function (swiper, settings) {
      * @returns {*}
      */
     var realIndex = function (index) {
+      // if index doesn't exist set index to activeIndex of swiper
       if (index === undefined) index = _this.activeIndex;
-      return parseInt(_this.slides.eq(index).attr('data-swiper-slide-index'));
+
+      // Check if swiper instance has loop before getting real index
+      if(_this.params.loop){
+        return parseInt(_this.slides.eq(index).attr('data-swiper-slide-index'));
+      }else{
+        return index;
+      }
     }
 
     var app = {
