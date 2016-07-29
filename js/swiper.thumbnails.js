@@ -1,9 +1,10 @@
-/**
- * Enable thumbnail support for Swiper
- * @param swiper (pass swiper element)
- * @param settings (pass custom options)
- */
 (function ($, window) {
+
+  /**
+   * Enable thumbnail support for Swiper
+   * @param swiper (pass swiper element)
+   * @param settings (pass custom options)
+   */
   window.swiperThumbs = function (swiper, settings) {
 
     /**
