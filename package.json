@@ -1,0 +1,12 @@
+{
+  "name": "swiper-thumbnails",
+  "version": "1.0.0",
+  "description": "Small Swiper plugin that enables pre-rendered static thumbnail support.",
+  "main": "js/swiper.thumbnails.js",
+  "repository": {
+    "url": "git@github.com:gijsroge/Swiper-Thumbnails.git",
+    "type": "git"
+  },
+  "author": "Gijs Rogé <rogegijs@gmail.com>",
+  "license": "MIT"
+}
