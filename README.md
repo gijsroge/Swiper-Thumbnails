@@ -14,7 +14,7 @@ $(document).ready(function(){
         // Our default options
         element: 'swiper-thumbnails',
         activeClass: 'is-active',
-        scope: '.selector' // Parent element that surrounds your Swiper html & Swiper thumbnail html to support multiple Swiper instances on one page.
+        scope: '.selector' // Parent selector that surrounds your Swiper html & Swiper thumbnail html to support multiple Swiper instances on one page.
     });
 });
 ```
