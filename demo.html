@@ -58,7 +58,7 @@
     $('.swiper-container').each(function () {
         var swiper = new Swiper(this);
         swiperThumbs(swiper, {
-            scope: $(this).closest('.swiper'),
+            scope: '.swiper',
             element: 'swiper-thumbnails',
         });
     });

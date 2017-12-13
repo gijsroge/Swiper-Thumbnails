@@ -30,7 +30,7 @@
 
             var element;
             if (typeof options.scope !== "undefined") {
-                element = $(options.scope).find('.' + options.element);
+                element = $(_this.wrapperEl).closest(options.scope).find('.' + options.element);
             } else {
                 element = $('.' + options.element);
             }
