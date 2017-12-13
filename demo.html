@@ -1,0 +1,67 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+    <style>
+        .swiper-container{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+        </div>
+    </div>
+
+    <!-- Add Pagination -->
+    <div class="swiper-thumbnails">
+        <button>slide 1</button>
+        <button>slide 2</button>
+        <button>slide 3</button>
+        <button>slide 4</button>
+        <button>slide 5</button>
+    </div>
+</div>
+
+<div class="swiper">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+        </div>
+    </div>
+
+    <!-- Add Pagination -->
+    <div class="swiper-thumbnails">
+        <button>slide 1</button>
+        <button>slide 2</button>
+        <button>slide 3</button>
+        <button>slide 4</button>
+        <button>slide 5</button>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+<script src="js/swiper.thumbnails.js"></script>
+<script>
+
+
+    $('.swiper-container').each(function () {
+        var swiper = new Swiper(this);
+        swiperThumbs(swiper, {
+            scope: $(this).closest('.swiper'),
+            element: 'swiper-thumbnails',
+        });
+    });
+</script>
+</body>
+</html>
