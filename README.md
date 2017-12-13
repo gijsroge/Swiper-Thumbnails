@@ -13,7 +13,8 @@ $(document).ready(function(){
     swiperThumbs(mySwiper, {
         // Our default options
         element: 'swiper-thumbnails',
-        activeClass: 'is-active'
+        activeClass: 'is-active',
+        scope: '.selector' // Parent selector that surrounds your Swiper html & Swiper thumbnail html to support multiple Swiper instances on one page.
     });
 });
 ```
