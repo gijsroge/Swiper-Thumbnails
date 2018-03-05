@@ -81,7 +81,7 @@
                     /**
                      * Update thumbs on slideChange
                      */
-                    _this.on('slideChangeStart', function (swiper) {
+                    _this.on('slideChange', function (swiper) {
                         app.updateActiveClasses(realIndex())
                     });
                 },
